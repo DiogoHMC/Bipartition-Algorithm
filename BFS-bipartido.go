@@ -38,14 +38,20 @@ func isBipartiteWithNames(graph [][]int, names []string) (bool, []int) {
 
 func main() {
 	// Lista de funcionários
-	names := []string{"Ana", "Bruno", "Carlos", "Daniela"}
+	names := []string{"Diogo", "Paixao", "Carlos", "Caio", "Pedro", "Virna", "Wiener", "Peter", "Cristiano Ronaldo", "Sam"}
 
-	// Conflitos entre eles
+	// Conflitos entre funcionários (grafo)
 	graph := [][]int{
-		{1, 3}, // Ana tem conflito com Bruno e Daniela
-		{0, 2}, // Bruno com Ana e Carlos
-		{1, 3}, // Carlos com Bruno e Daniela
-		{0, 2}, // Daniela com Ana e Carlos
+		{1, 4},       
+		{0, 2},       
+		{1, 5},       
+		{6, 7},       
+		{0, 8},       
+		{2, 9},       
+		{3, 8},       
+		{3, 9},       
+		{4, 6},       
+		{5, 7},       
 	}
 
 	isBipartite, color := isBipartiteWithNames(graph, names)
