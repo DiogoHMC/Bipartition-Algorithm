@@ -4,12 +4,12 @@ import (
 	"fmt"
 )
 
-// Verifica se o grafo é bipartido e separa os funcionários em dois grupos
+
 func isBipartiteWithNames(graph [][]int, names []string) (bool, []int) {
 	V := len(graph)
 	color := make([]int, V)
 	for i := range color {
-		color[i] = -1 // Nenhum funcionário foi colorido ainda
+		color[i] = -1 
 	}
 
 	for start := 0; start < V; start++ {
@@ -26,7 +26,7 @@ func isBipartiteWithNames(graph [][]int, names []string) (bool, []int) {
 						color[neighbor] = 1 - color[node]
 						queue = append(queue, neighbor)
 					} else if color[neighbor] == color[node] {
-						return false, nil // Conflito: não bipartido
+						return false, nil 
 					}
 				}
 			}
@@ -37,10 +37,10 @@ func isBipartiteWithNames(graph [][]int, names []string) (bool, []int) {
 }
 
 func main() {
-	// Lista de funcionários
-	names := []string{"Diogo", "Paixao", "Carlos", "Caio", "Pedro", "Virna", "Wiener", "Peter", "Cristiano Ronaldo", "Sam"}
+	
+	names := []string{"Diogo", "Paixao", "Virna", "Caio", "Pedro", "Carlos", "Wiener", "Peter", "Cristiano Ronaldo", "Sam"}
 
-	// Conflitos entre funcionários (grafo)
+	
 	graph := [][]int{
 		{1, 4},       
 		{0, 2},       
